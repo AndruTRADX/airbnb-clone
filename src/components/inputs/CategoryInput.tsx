@@ -25,11 +25,11 @@ const CategoryInput = ({
         flex
         flex-col
         gap-3
-        hover:border-neutral-600
+        hover:border-neutral-500
         hover:bg-neutral-100
         transition
         cursor-pointer
-        ${selected ? 'border-neutral-600 bg-neutral-50' : 'border-neutral-200'}
+        ${selected ? 'border-neutral-500 bg-neutral-50' : 'border-neutral-200'}
       `}
     >
       <Icon size={30} />
