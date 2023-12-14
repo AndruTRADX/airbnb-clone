@@ -11,7 +11,6 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json()
-
   const {
     title,
     description,
@@ -23,6 +22,12 @@ export async function POST(request: Request) {
     location,
     price,
   } = body
+
+  Object.keys(body).forEach((value: any) => {
+    if (!body[value]) {
+      NextResponse.error()
+    }
+  })
 
   const listing = await prisma.listing.create({
     data: {
