@@ -1,31 +1,43 @@
-'use client'
+import { SafeUser } from '@/types'
 
-import Container from '@/components/Container'
+import Categories from './Categories'
+import Container from '../Container'
 import Logo from './Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
-import { SafeUser } from '@/types'
-import Categories from './Categories'
 
 interface NavbarProps {
   currentUser?: SafeUser | null
 }
 
-const Navbar = ({ currentUser }: NavbarProps) => {
+const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
   return (
-    <nav className="fixed w-full shadow-sm bg-white/80 backdrop-blur z-10">
-      <div className="py-4 border-b">
+    <div className="fixed w-full bg-white/80 backdrop-blur-sm z-10 shadow-sm">
+      <div
+        className="
+          py-4 
+          border-b-[1px]
+        "
+      >
         <Container>
-          <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
+          <div
+            className="
+            flex 
+            flex-row 
+            items-center 
+            justify-between
+            gap-3
+            md:gap-0
+          "
+          >
             <Logo />
             <Search />
             <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
-
       <Categories />
-    </nav>
+    </div>
   )
 }
 

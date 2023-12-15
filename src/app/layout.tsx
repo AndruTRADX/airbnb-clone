@@ -1,21 +1,25 @@
-import './globals.css'
-
-import type { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
+
 import Navbar from '@/components/navbar/Navbar'
-import ClientOnly from '@/components/ClientOnly'
-import RegisterModal from '@/components/modals/RegisterModal'
-import ToasterProvider from '../providers/ToasterProvider'
 import LoginModal from '@/components/modals/LoginModal'
-import getCurrentUser from '@/actions/getCurrentUser'
+import RegisterModal from '@/components/modals/RegisterModal'
+import SearchModal from '@/components/modals/SearchModal'
 import RentModal from '@/components/modals/RentModal'
 
-const inter = Nunito({ subsets: ['latin'] })
+import ToasterProvider from '@/providers/ToasterProvider'
 
-export const metadata: Metadata = {
+import './globals.css'
+import ClientOnly from '@/components/ClientOnly'
+import getCurrentUser from '@/actions/getCurrentUser'
+
+export const metadata = {
   title: 'Airbnb',
-  description: 'Airbnb clone',
+  description: 'Airbnb Clone',
 }
+
+const font = Nunito({
+  subsets: ['latin'],
+})
 
 export default async function RootLayout({
   children,
@@ -26,12 +30,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={font.className}>
         <ClientOnly>
           <>
             <ToasterProvider />
-            <RegisterModal />
             <LoginModal />
+            <RegisterModal />
+            <SearchModal />
             <RentModal />
             <Navbar currentUser={currentUser} />
           </>

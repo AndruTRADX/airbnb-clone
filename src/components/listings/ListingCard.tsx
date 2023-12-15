@@ -115,19 +115,21 @@ const ListingCard = ({
         </div>
 
         <div className="flex flex-row items-center gap-1">
-          <div className="font-semibold">${price.toLocaleString()}</div>
+          <div className="font-semibold">$ {price.toLocaleString()}</div>
           {!reservation && (
             <div className="font-light text-gray-600">night</div>
           )}
         </div>
 
         {onAction && actionLabel && (
-          <Button
-            disabled={disabled}
-            small
-            label={actionLabel}
-            onClick={handleCancel}
-          />
+          <div className='mt-3'>
+            <Button
+              disabled={disabled}
+              small
+              label={actionLabel}
+              onClick={handleCancel}
+            />
+          </div>
         )}
       </div>
     </div>
