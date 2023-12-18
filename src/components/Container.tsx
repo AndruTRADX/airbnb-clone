@@ -2,11 +2,14 @@
 
 interface ContainerProps {
   children: JSX.Element
+  className?: string
 }
 
-const Container = ({ children }: ContainerProps) => {
+const Container = ({ children, className }: ContainerProps) => {
   return (
-    <div className="max-w-screen-3xl mx-auto xl:px-20 md:px-10 sm:px-2 px-4">
+    <div
+      className={`max-w-screen-3xl mx-auto xl:px-20 md:px-10 sm:px-2 px-4 ${className}`}
+    >
       {children}
     </div>
   )
