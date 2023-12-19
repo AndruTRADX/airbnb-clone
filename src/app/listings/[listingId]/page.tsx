@@ -2,7 +2,7 @@ import getCurrentUser from '@/actions/getCurrentUser'
 import getListingById from '@/actions/getListingById'
 import getReservations from '@/actions/getReservations'
 
-import ClientOnly from '@/components/ClientOnly'
+import ClientOnly from '@/components/client/ClientOnly'
 import EmptyState from '@/components/EmptyState'
 
 import ListingClient from './ListingClient'

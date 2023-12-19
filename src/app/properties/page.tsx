@@ -1,5 +1,5 @@
 import EmptyState from '@/components/EmptyState'
-import ClientOnly from '@/components/ClientOnly'
+import ClientOnly from '@/components/client/ClientOnly'
 
 import getCurrentUser from '@/actions/getCurrentUser'
 import getListings from '@/actions/getListings'
